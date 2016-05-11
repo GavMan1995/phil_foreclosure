@@ -19,15 +19,16 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td><%= h.owner %></td>
-          <td><%= h.propad %></td>
-          <td><%= h.prop_city %></td>
-          <td><%= h.prop_state %></td>
-          <td><%= h.zestimate %></td>
-          <td><button type="button" class="btn letter-btn">Create Letter</button></td>
-      </tr>
-      <% end %>
+        <% @homes.each do |h| %>
+          <tr>
+            <td><%= h.owner %></td>
+            <td><%= h.propad %></td>
+            <td><%= h.prop_city %></td>
+            <td><%= h.prop_state %></td>
+            <td><%= h.zestimate %></td>
+            <td><button type="button" class="btn letter-btn">Create Letter</button></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   <% else %>
