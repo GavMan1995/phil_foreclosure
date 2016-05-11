@@ -13,7 +13,8 @@ class HomeController < ApplicationController
       address = home.propad
       city = home.prop_city
       state = home.prop_state
-      zillow = @rillow.get_search_results("#{address}", "#{city}, #{state}")
+      zip = home.prop_zip
+      zillow = @rillow.get_search_results("#{address}", "#{city}, #{state}, #{zip}")
       zillow.to_hash
       zestimate = zillow.find_attribute 'zestimate'
       if  zestimate == nil
