@@ -1,3 +1,16 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.file-div {
+  border-radius: 15px;
+  box-shadow: 0 1px 1em grey;
+  margin-bottom: 3em;
+}
+
+.letter-btn {
+  background-color: #93eb6f;
+  color: black;
+}
+
+.import-btn {
+  background-color: #6ec2eb;
+  color: black;
+  margin: 20px;
+}

@@ -1,5 +1,41 @@
-<h2>Add Homes</h2>
-<%= form_tag import_home_index_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
-<% end %>
+  <div class="file-div col-md-6 col-md-offset-3 text-center" style="margin-top: 20px; padding: 30px;">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= form_tag import_home_index_path, multipart: true do %>
+      <%= file_field_tag :file %>
+    </div>
+    <br />
+    <button type="submit" class="btn import-btn">Import</button>
+    <% end %>
+  </div>
+
+  <% if @homes.any? %>
+    <table class="table-striped table">
+      <thead>
+        <th>Owner</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zestimate</th>
+      </thead>
+
+      <tbody>
+        <% @homes.each do |h| %>
+        <% equity = h. %>
+        <tr>
+          <td><%= h.owner %></td>
+          <td><%= h.propad %></td>
+          <td><%= h.prop_city %></td>
+          <td><%= h.prop_state %></td>
+          <td><%= h.zestimate %></td>
+          <td><button type="button" class="btn letter-btn">Create Letter</button></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+  <br />
+  <br />
+  <br />
+  <br/>
+    <h1 class="text-center">No data to display, please add file</h1>
+  <% end %>
