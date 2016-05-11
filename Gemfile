@@ -16,6 +16,7 @@ gem 'paperclip'
 gem 'roo'
 gem 'roo-google'
 gem 'roo-xls'
+gem 'puma'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
