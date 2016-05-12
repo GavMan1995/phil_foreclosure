@@ -1,3 +1,8 @@
+<script>
+  $(document).ready(function(){
+    $('#myTable').dataTable();
+  });
+</script>
   <div class="file-div col-md-6 col-md-offset-3 text-center" style="margin-top: 20px; padding: 30px;">
     <div class="col-xs-6 col-xs-offset-3">
       <%= form_tag import_home_index_path, multipart: true do %>
@@ -9,7 +14,7 @@
   </div>
 
   <% if @homes.any? %>
-    <table class="table-striped table">
+    <table id="myTable" class="table-striped table">
       <thead>
         <th>Owner</th>
         <th>Year Built</th>
@@ -19,7 +24,7 @@
         <th>Zip</th>
         <th>Zestimate</th>
         <th>Assessed Value</th>
-        <th>Equity %</th>
+        <th data-sortable="true">Equity</th>
       </thead>
 
       <tbody>
