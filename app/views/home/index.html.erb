@@ -3,6 +3,7 @@
     $('#myTable').dataTable();
   });
 </script>
+
   <div class="file-div col-md-6 col-md-offset-3 text-center" style="margin-top: 20px; padding: 30px;">
     <div class="col-xs-6 col-xs-offset-3">
       <%= form_tag import_home_index_path, multipart: true do %>
@@ -14,17 +15,22 @@
   </div>
 
   <% if @homes.any? %>
-    <table id="myTable" class="table-striped table">
+    <table id="myTable" class="table-striped table" style="width: 100%">
       <thead>
-        <th>Owner</th>
         <th>Year Built</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
+        <th>Prop Address</th>
+        <th>Prop City</th>
+        <th>Prop Zip</th>
+        <th>Owner</th>
+        <th>Mail Address</th>
+        <th>Mail City</th>
+        <th>Mail Zip</th>
+        <th>SqFt</th>
+        <th>Bed Bath</th>
+        <th>BathRoom</th>
         <th>Zestimate</th>
         <th>Assessed Value</th>
-        <th data-sortable="true">Equity</th>
+        <th>Equity</th>
       </thead>
 
       <tbody>
@@ -45,12 +51,17 @@
           <% style = "color: green;"%>
         <% end %>
           <tr>
-            <td><%= h.owner %></td>
             <td><%= h.year_built %></td>
             <td style="<%= style %>" ><%= h.propad %></td>
             <td><%= h.prop_city %></td>
-            <td><%= h.prop_state %></td>
             <td><%= h.prop_zip %></td>
+            <td><%= h.owner %></td>
+            <td><%= h.mailad %></td>
+            <td><%= h.city %></td>
+            <td><%= h.zip %></td>
+            <td><%= h.sqft %></td>
+            <td><%= h.bedbath %></td>
+            <td><%= h.bathroom %></td>
             <td><a href=<%= url %> target="_blank"><%= h.zestimate %></a></td>
             <td><%= h.assessed %></td>
             <td><%= "#{equity}%" %></td>
